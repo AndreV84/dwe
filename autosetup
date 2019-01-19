@@ -1,0 +1,27 @@
+#!/bin/bash
+echo welcome to MN auto-setup
+sudo apt-get install -y git watch nano
+git clone https://github.com/AndreV84/dwe
+chmod +x dwe/dwe-cli
+chmod +x dwe/dwed
+mkdir ~/.dwe
+echo PASTE the masternode private key, please. Then  press enter 
+read masternodeprivkey 
+echo $masternodeprivkey >sample
+cat << EOF > ~/.dwe/dwe.conf 
+rpcuser=$(openssl rand -hex 7)
+rpcpassword=$(openssl rand -hex 22)
+rpcallowip=127.0.0.1
+externalip=$(wget -q -O- icanhazip.com)
+server=1
+daemon=1
+logtimestamps=1
+maxconnections=256
+masternode=1
+masternodeprivkey=$(cat sample)
+EOF
+cat ~/.dwe/dwe.conf
+cd dwe
+./dwed
+watch exec ./dwe-cli getblockcount
+

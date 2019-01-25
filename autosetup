@@ -1,6 +1,6 @@
 #!/bin/bash
 echo welcome to MN auto-setup
-sudo apt-get install -y git watch nano
+sudo apt-get install -y git watch nano openssl
 git clone https://github.com/AndreV84/dwe
 chmod +x dwe/dwe-cli
 chmod +x dwe/dwed

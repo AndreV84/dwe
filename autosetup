@@ -1,9 +1,14 @@
 #!/bin/bash
-echo welcome to MN auto-setup
-sudo apt-get install -y git watch nano openssl
+echo Welcome to MN auto-setup
+[ "${USER:-}" = "root" ] || exec sudo "$0" "$@"
+if [ -n "`which apt-get`" ];
+            then apt-get install -y watch nano screen git openssl ;
+            elif [ -n "`which yum`" ];
+            then yum -y install watch nano screen git openssl ;
+fi;
+cd ~
 git clone https://github.com/AndreV84/dwe
-chmod +x dwe/dwe-cli
-chmod +x dwe/dwed
+chmod +x dwe/dwe-cli dwe/dwed
 mkdir ~/.dwe
 echo PASTE the masternode private key, please. Then  press enter 
 read masternodeprivkey 

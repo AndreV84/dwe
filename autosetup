@@ -1,8 +1,8 @@
 #!/bin/bash
-echo Welcome to MN auto-setup!
-echo Make sure you have transaction id [txid] of collateral transaction in your local core DWE application associated masternode.conf file
-echo Make sure you have masternodeprivkey generated and specified in local core DWE application associated masternode.conf file
-echo During the installation you will need to enter your masternodeprivkey once. That will add it to VPS associated dwe.conf file
+##echo Welcome to MN auto-setup!
+#echo Make sure you have transaction id [txid] of collateral transaction in your local core DWE application associated masternode.conf file
+#echo Make sure you have masternodeprivkey generated and specified in local core DWE application associated masternode.conf file
+e#cho During the installation you will need to enter your masternodeprivkey once. That will add it to VPS associated dwe.conf file
 #[ "${USER:-}" = "root" ] || exec sudo "$0" "$@"
 #if [ -n "`which apt-get`" ];
  #           then apt-get install -y watch nano screen git openssl ;
